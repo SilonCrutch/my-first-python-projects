@@ -1,14 +1,14 @@
 import time
 from Player import HumanPlayer, RandomComputerPlayer
 
-class TicTacToe:
+class TicTacToe():
     def __init__(self):
         self.board = [' ' for _ in range(9)] # we will use a single list to rep 3x3 board
         self.current_winner = None #keep track of winner!
     
     def print_board(self):
         #this is just getting the rows
-        for row in [self.board[i*3: (i+1)*3] for i in range(3)]:
+        for row in [self.board[i*3:(i+1)*3] for i in range(3)]:
             print("|","|".join(row),"|")
         
     @staticmethod
@@ -90,7 +90,7 @@ def play(game, x_player, o_player, print_game=True):
         # let's define a function to make a move!
         if game.make_move(square, letter):
             if print_game:
-                print(letter,f'makes a move square {square}')
+                print(letter,f'makes a move to square {square}')
                 game.print_board()
                 print('') #just empty line
             
